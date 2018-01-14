@@ -1,9 +1,9 @@
 const initialState = function() {
     const rows = [];
-    for (var i=0; i<3; i++) {
-        var row = {},
+    for (let i=0; i<3; i++) {
+        let row = {},
             cells = [];
-        for (var j=0; j<3; j++) {
+        for (let j=0; j<3; j++) {
             cells.push({position: {x: j, y: i}, value: ''});
         }
         row.cells = cells;
@@ -14,7 +14,7 @@ const initialState = function() {
 
 const ticTacToeMove = (board = initialState(), action) => {
     console.log('action: '+JSON.stringify(action));
-    var cell;
+    let cell;
     switch (action.type) {
         case 'MOVE':
             let boardCopy = Object.assign({}, board);
@@ -68,11 +68,11 @@ class TTTCell extends React.Component {
         if (store.getState().gameOver) {
             return;
         }
-        var el = $(event.currentTarget);
-        var position = el.data('position').split(',');
+        let el = $(event.currentTarget);
+        let position = el.data('position').split(',');
         store.dispatch({ type: 'MOVE', position: { x: position[0], y: position[1] }});
 
-        var winner = strategy(store.getState().board.rows);
+        let winner = strategy(store.getState().board.rows);
         if (winner) {
             alert("Player " + winner + " Wins!!");
             store.dispatch({type: 'TOGGLE_GAME_OVER'});
@@ -83,11 +83,11 @@ class TTTCell extends React.Component {
     }
 
     boardFilled() {
-        var board = store.getState().board.rows;
-        for (var y = 0; y < board.length; y++) {
-            var row = board[y],
+        let board = store.getState().board.rows;
+        for (let y = 0; y < board.length; y++) {
+            let row = board[y],
                 cells = row.cells;
-            for (var x = 0; x < cells.length; x++) {
+            for (let x = 0; x < cells.length; x++) {
                 if (!row.cells[x].value) {
                     return false;
                 }
@@ -97,7 +97,7 @@ class TTTCell extends React.Component {
     }
 
     render() {
-        var cell = store.getState().board.rows[this.props.rowIndex].cells[this.props.cellIndex];
+        let cell = store.getState().board.rows[this.props.rowIndex].cells[this.props.cellIndex];
         return (
             <div className={"ttt-cell " + (cell.winningCell? 'winning-cell':'')} onClick={this.cellClick} data-position={cell.position.x+','+cell.position.y}>
         {cell.value}
