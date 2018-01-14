@@ -9,7 +9,7 @@ const initialState = function() {
         row.cells = cells;
         rows.push(row);
     }
-    return {rows: rows, player: 'X'};
+    return {rows: rows, player: 'O'};
 }
 
 const ticTacToeMove = (board = initialState(), action) => {
