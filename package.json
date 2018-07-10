@@ -1,0 +1,28 @@
+{
+  "name": "tic-tac-toe-react",
+  "version": "0.2.0",
+  "description": "Tic-Tac-Toe in React JS (and Redux)",
+  "scripts": {
+    "start": "http-server"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sukhadia/ticTacToeReact"
+  },
+  "keywords": [
+    "ticTacToe",
+    "reactjs",
+    "redux"
+  ],
+  "author": "Neel Sukhadia",
+  "contributors": [
+    "Neel Sukhadia <neelsukhadia@gmail.com> (http://github.com/sukhadia)"
+  ],
+  "license": "MIT"
+}
