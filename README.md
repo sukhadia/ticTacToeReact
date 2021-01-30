@@ -6,4 +6,4 @@ Tic Tac Toe game with React JS and Redux.
 
 `npm start`
 
-NOTE: Uses an HTTP server: https://github.com/indexzero/http-serverto. 
+NOTE: Uses an HTTP server: https://www.npmjs.com/package/http-server
